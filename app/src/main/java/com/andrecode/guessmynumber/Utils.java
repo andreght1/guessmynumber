@@ -2,6 +2,7 @@ package com.andrecode.guessmynumber;
 
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -14,4 +15,5 @@ public class Utils {
     public static ArrayList<Integer> LIST = null;
     public static GridView GRIDVIEW = null;
     public static ArrayAdapter<Integer> ADAPTER = null;
+    public static ProgressBar PROGRESS = null;
 }

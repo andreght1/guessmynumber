@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +24,8 @@ public class SecondActivity extends ActionBarActivity {
         Utils.GRIDVIEW = (GridView)findViewById(R.id.gridView);
         Utils.ADAPTER = new ArrayAdapter<Integer>(this,android.R.layout.simple_dropdown_item_1line,Utils.LIST);
         Utils.GRIDVIEW.setAdapter(Utils.ADAPTER);
+        Utils.PROGRESS = (ProgressBar) findViewById(R.id.progressBar);
+        Utils.PROGRESS.setProgress(16);
     }
 
     @Override
