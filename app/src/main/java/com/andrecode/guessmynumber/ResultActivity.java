@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -14,8 +15,9 @@ public class ResultActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toast.makeText(this, MainActivity.RESULT.toString(), Toast.LENGTH_SHORT).show();
         setContentView(R.layout.activity_result);
+        TextView textView = (TextView)findViewById(R.id.text_result);
+        textView.setText(Utils.RESULT.toString());
     }
 
     @Override

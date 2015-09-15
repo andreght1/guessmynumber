@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class FourthActivity extends ActionBarActivity {
@@ -13,7 +18,11 @@ public class FourthActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fourth);
+        setContentView(R.layout.activity_grid);
+        Utils.LIST = loadList();
+        Utils.GRIDVIEW = (GridView)findViewById(R.id.gridView);
+        Utils.ADAPTER = new ArrayAdapter<Integer>(this,android.R.layout.simple_dropdown_item_1line,Utils.LIST);
+        Utils.GRIDVIEW.setAdapter(Utils.ADAPTER);
     }
 
     @Override
@@ -34,18 +43,18 @@ public class FourthActivity extends ActionBarActivity {
     public void onBackPressed() {}
 
     public void incrementResult(View view) {
-        MainActivity.RESULT += 8;
+        Utils.RESULT += 8;
         this.nextIntent(view);
     }
 
     public void nextIntent(View view) {
-        int index = Integer.parseInt(view.getTag().toString());
-        Intent intent = null;
-        try {
-            intent = new Intent(this, Class.forName(MainActivity.PACKAGENAME + "." + MainActivity.INTENTS.get(index)));
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        Intent intent = new Intent(this,FifthActivity.class);
         startActivity(intent);
+    }
+
+    private ArrayList<Integer> loadList() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        Collections.addAll(list,8,9,10,11,12,13,14,15,24,25,26,27,28,29,30,31,40,41,42,43,44,45,46,47,56,57,58,59,60,61,62,63);
+        return list;
     }
 }

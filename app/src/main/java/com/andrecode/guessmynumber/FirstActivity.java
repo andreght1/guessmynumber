@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+import java.util.ArrayList;
 
 
 public class FirstActivity extends ActionBarActivity {
@@ -14,7 +16,11 @@ public class FirstActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        setContentView(R.layout.activity_grid);
+        Utils.LIST = loadList();
+        Utils.GRIDVIEW = (GridView)findViewById(R.id.gridView);
+        Utils.ADAPTER = new ArrayAdapter<Integer>(this,android.R.layout.simple_dropdown_item_1line,Utils.LIST);
+        Utils.GRIDVIEW.setAdapter(Utils.ADAPTER);
     }
 
     @Override
@@ -35,18 +41,20 @@ public class FirstActivity extends ActionBarActivity {
     public void onBackPressed() {}
 
     public void incrementResult(View view) {
-        MainActivity.RESULT += 1;
+        Utils.RESULT += 1;
         this.nextIntent(view);
     }
 
     public void nextIntent(View view) {
-        int index = Integer.parseInt(view.getTag().toString());
-        Intent intent = null;
-        try {
-            intent = new Intent(this, Class.forName(MainActivity.PACKAGENAME + "." + MainActivity.INTENTS.get(index)));
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        Intent intent = new Intent(this,SecondActivity.class);
         startActivity(intent);
+    }
+
+    private ArrayList<Integer> loadList() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i=0; i<32; i++){
+            list.add(i*2+1);
+        }
+        return list;
     }
 }
