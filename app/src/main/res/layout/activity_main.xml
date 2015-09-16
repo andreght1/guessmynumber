@@ -8,16 +8,52 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/background_dark"
-        android:text="Pense em um número entre 1 e 63, guarde ele muito bem em sua mente. Será que eu consigo adivinhar qual número você escolheu? Para descobrir clique em Começar!"
-        android:id="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:text="@string/textViewMain"
+        android:id="@+id/textViewMain"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:text="@string/textViewMain2"
+        android:id="@+id/textViewMain2"
+        android:layout_below="@+id/textViewMain"
+        android:layout_alignLeft="@+id/textViewMain"
+        android:layout_alignStart="@+id/textViewMain"
+        android:layout_marginBottom="@dimen/activity_vertical_margin" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:text="@string/textViewMain3"
+        android:id="@+id/textViewMain3"
+        android:layout_below="@+id/textViewMain2"
+        android:layout_alignLeft="@+id/textViewMain2"
+        android:layout_alignStart="@+id/textViewMain2"
+        android:layout_marginBottom="@dimen/activity_vertical_margin" />
+
+    <Button
+        android:layout_above="@+id/button_start"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/material_blue_grey_800"
+        android:textColor="@android:color/primary_text_dark"
+        android:text="Sobre"
+        android:id="@+id/button_about"
+        android:layout_centerHorizontal="true"
+        android:onClick="callAbout"/>
 
     <Button
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/notification_large_icon_height"
+        android:layout_height="wrap_content"
         android:background="@color/material_blue_grey_800"
         android:textColor="@android:color/primary_text_dark"
         android:text="Começar"

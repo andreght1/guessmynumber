@@ -16,4 +16,7 @@ public class Utils {
     public static GridView GRIDVIEW = null;
     public static ArrayAdapter<Integer> ADAPTER = null;
     public static ProgressBar PROGRESS = null;
+    public static final String URL_SITE = "http://andrerodrigues.work/";
+    public static final String URL_GIT = "https://github.com/andreght1";
+    public static final String URL_APP = "https://play.google.com/store/apps/details?id=com.andrecode.guessmynumber";
 }

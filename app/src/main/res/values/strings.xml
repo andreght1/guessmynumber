@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Adivinhe Meu Número</string>
     <string name="title_activity">Seu número está aqui ?</string>
-    <string name="title_activity_result">Você pensou nesse número ?</string>
+    <string name="title_activity_result">Seu número é...</string>
+    <string name="title_activity_about">Sobre</string>
+
+    <string name="textViewMain">Pense em um número entre 1 e 63.</string>
+    <string name="textViewMain2">Será que eu consigo adivinhar qual número você escolheu?</string>
+    <string name="textViewMain3">Para descobrir clique em Começar!</string>
+
+    <string name="textViewAbout">Oi, meu nome é André Rodrigues :)</string>
+    <string name="textViewAbout2">Se você gostou desse App, clique em compartilhar.</string>
+    <string name="textViewAbout3">O projeto é Open Source. Sinta-se avontade para clonar, modificar ou enviar um pull request no GitHub.</string>
+    <string name="textViewAbout4">Para ver outros projetos, visite meu site!</string>
 </resources>

@@ -11,14 +11,27 @@
         android:text="Your number is"
         android:id="@+id/text_result"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:layout_above="@+id/button_start_over"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:layout_width="fill_parent"
-        android:layout_height="@dimen/notification_large_icon_height"
+        android:layout_height="wrap_content"
+        android:background="@color/material_blue_grey_800"
+        android:textColor="@android:color/primary_text_dark"
+        android:text="Sobre"
+        android:id="@+id/button_about"
+        android:layout_centerHorizontal="true"
+        android:onClick="callAbout"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:background="@color/material_blue_grey_800"
         android:textColor="@android:color/primary_text_dark"
         android:text="Recomeçar"

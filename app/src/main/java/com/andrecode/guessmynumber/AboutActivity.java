@@ -5,21 +5,26 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ShareActionProvider;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.method.MovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-public class ResultActivity extends ActionBarActivity {
+public class AboutActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
-        TextView textView = (TextView)findViewById(R.id.text_result);
-        textView.setText(Utils.RESULT.toString());
+        setContentView(R.layout.activity_about);
+
+        TextView textView = (TextView) findViewById(R.id.textViewAbout5);
+        String link = "<a href='"+Utils.URL_SITE+"' >Andre Rodrigues</a>";
+        textView.setText(Html.fromHtml(link));
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     @Override
@@ -44,16 +49,7 @@ public class ResultActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onBackPressed() {}
-
-    public void callAbout(View view) {
-        Intent intent = new Intent(this,AboutActivity.class);
-        startActivity(intent);
-    }
-
-    public void startOver(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void goBack(View view) {
+        super.onBackPressed();
     }
 }
